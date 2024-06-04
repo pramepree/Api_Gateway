@@ -21,10 +21,10 @@ app.get('/get_NameMember', async (req, res) => {
 });
 
 // เส้นทางสำหรับรับคำขอ POST ที่ /api1
-app.post('/api1/post', async (req, res) => {
+app.post('/post_NameMember', async (req, res) => {
   try {
     // ส่งคำขอไปยัง API ภายนอก
-    const response = await axios.post('https://servermongodb-angular.onrender.com/articles', req.body);
+    const response = await axios.post('http://localhost:3000/post_NameMember', req.body);
     
     // ส่งค่าตอบกลับจาก API ภายนอกมายังผู้เรียกใช้
     res.status(response.status).json(response.data);
