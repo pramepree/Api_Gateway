@@ -7,11 +7,11 @@ app.use(express.json());
 app.use(cors()); // เพิ่ม middleware สำหรับการตั้งค่า CORS
 
 // เส้นทางสำหรับรับคำขอ GET ที่ /api1
-app.get('/api1', async (req, res) => {
+app.get('/get_NameMember', async (req, res) => {
   try {
     // ส่งคำขอไปยัง API ภายนอก
-    const response = await axios.get('https://servermongodb-angular.onrender.com/articles');
-    
+    //const response = await axios.get('https://servermongodb-angular.onrender.com/articles');
+    const response = await axios.get('http://localhost:3000/get_NameMember');
     // ส่งค่าตอบกลับจาก API ภายนอกมายังผู้เรียกใช้
     res.json(response.data);
   } catch (error) {
